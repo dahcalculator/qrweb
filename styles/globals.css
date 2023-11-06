@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body{
+        @apply bg-gray-100;
+    }
+}
+
+
+.cardbox {
+    @apply font-bold text-2xl rounded-2xl p-4  flex shadow-md  bg-white 
+}
+
+.cardB {
+    @apply shadow-md  bg-white rounded-xl 
+}
