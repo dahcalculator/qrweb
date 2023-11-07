@@ -31,10 +31,12 @@ const Header = () => {
                 Hi, {data?.user?.name}
               </span>
 
+              <Link className="nav-link" href="/login">
               <span style={{ cursor: "pointer" }} onClick={() => signOut()}>
                 {" "}
                 Logout
               </span>
+              </Link>
             </>
           ) : (
             <span style={{ marginRight: "15px" }}>

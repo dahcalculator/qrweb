@@ -22,6 +22,7 @@ const getCases = async () => {
 
 const CaseCard = async () => {
   const { cases } = await getCases();
+
  return (
     <div className="w-full h-full">
         <div className="  flex-col flex gap-4 w-full h-full">
@@ -33,7 +34,7 @@ const CaseCard = async () => {
         
             <div className="h-full flex w-full flex-row items-center  justify-evenly p-4 "
            
-            >git
+            >
             <div className="h-full w-full ">
             <div className="text-2xs  " > name : {c.title}</div>
             <div className="text-xs text-gray-400 font-bold"> case no: {(c._id).slice(0, 8)}</div>

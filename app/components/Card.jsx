@@ -1,8 +1,6 @@
 async function getPostsDate(){
 
-  
 }
-
 
 
 const Card

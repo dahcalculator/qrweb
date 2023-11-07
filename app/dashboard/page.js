@@ -13,11 +13,29 @@ import Card from '../components/Card';
 import CardS from '../components/CardS';
 import CardT from '../components/CardT';
 
+const getCases = async () => {
+  try {
+    const res = await fetch("http://localhost:3000/api/cases", {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch topics");
+    }
+
+    return res.json();
+  } catch (error) {
+    console.log("Error loading cases: ", error);
+  }
+};
 
 
-const Dashboard = () => {
+const Dashboard =  () => {
+  const {cases } =  getCases()
 
-  const { data } = useSession();
+  const { data } =  useSession();
+
+  console.log();
   return  (
   
   <div>

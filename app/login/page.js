@@ -5,6 +5,8 @@ import React, { useState } from "react";
 
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image"
+import logo from "../../public/images/logo.jpg"
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -41,7 +43,13 @@ const Login = () => {
   return (
     <div className="container container-fluid bg">
       <div className="">
-        <div className="flex justify-center items-center ">
+        <div className="flex justify-center items-center  flex-col">
+          <Image
+          src={logo}
+          width={90}
+             height={90}
+          />
+
           <form
             className="border border-secondary rounded p-4 w-96 bg-white"
             onSubmit={submitHandler}
