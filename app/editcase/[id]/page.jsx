@@ -1,4 +1,6 @@
-import EditTopicForm from "@/app/components/EditTopicForm";
+
+
+import EditTopicForm from "../../components/EditTopicForm"
 
 const getTopicById = async (id) => {
   try {

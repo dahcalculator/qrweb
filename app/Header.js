@@ -1,5 +1,8 @@
 import Link from "next/link";
 import React from "react";
+import Image from "next/image"
+import cadet from "../public/images/cadet.jpg"
+
 
 import { useSession, signOut } from "next-auth/react";
 
@@ -7,10 +10,17 @@ const Header = () => {
   const { data } = useSession();
 
   return (
-    <nav className=" flex-row w-full h-20 justify-center items-center">
-    <div className=" flex justify-between  px-10 items-center">
-        <div className=" font-bold">
-        School Cadet Unit
+    <nav className=" flex-row w-full h-fit justify-center items-center">
+    <div className=" flex justify-between  px-10 my-4 items-center">
+        <div className=" font-bold flex-col justify-center items-center">
+       
+        <Image
+            src={cadet}
+          width={70}
+            height={70}
+            alt="case image"
+            />
+             School Cadet Unit
         </div>
 
 

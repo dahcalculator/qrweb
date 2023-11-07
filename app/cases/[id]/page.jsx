@@ -1,6 +1,6 @@
 import Link from "next/link";
-
-
+import RemoveBtn from "../../components/RemoveBtn";
+import { HiPencilAlt } from "react-icons/hi";
 
 
 
@@ -20,26 +20,27 @@ const getTopicById = async (id) => {
 const page = async ({ params }) => {
   const { id } = params;
   const { x } = await getTopicById(id);
+  const { _id, description, title, createdAt } = x;
   return (
     <div>
-   <>
-   {x.map((c) =>(
+   
      <article className="space-y-4  p-4">
       
-      <div className="w-full flex "> <Link href={`/editcase/${c.id}`} className=" bg-green-600 font-bold text-white py-3 px-6 w-fit self-end"> Edit Case </Link></div>
+      <div className="w-full flex gap-2"> 
+      <RemoveBtn id={_id} />
+      <Link href={`/editcase/${id}`} className="text-2xl"> <HiPencilAlt/></Link></div>
       
          <div className="capitalize">
-             <div className="font-bold"> title: {c.title}</div>
-             <div> <span className="font-bold"> Date:</span> {c.reatedAt}</div>
-             <div> <span className="font-bold"> case:</span> {c.id.slice(0,8)} </div>
+             <div className="font-bold"> title: {title}</div>
+             <div> <span className="font-bold"> Date:</span> {createdAt}</div>
+             <div> <span className="font-bold"> case:</span> {id.slice(0,8)} </div>
          </div>
 
          <div>
         {description}
          </div>
      </article>
-     ))}
-     </>
+  
  </div>
 
   )
